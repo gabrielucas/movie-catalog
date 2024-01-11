@@ -9,7 +9,7 @@ import { MovieDataResponse } from './@types/MovieDataResponse'
 export class TMDBService {
   constructor(private http: HttpClient) {}
 
-  getPopularMovies(): Observable<MovieDataResponse> {
-    return this.http.get<MovieDataResponse>(`/movie/popular`)
+  getPopularMovies(page?: number): Observable<MovieDataResponse> {
+    return this.http.get<MovieDataResponse>(`/movie/popular?page=${page}`)
   }
 }

@@ -2,3 +2,13 @@ h1 {
   margin: 2rem 0 1.5rem;
   color: var(--blue-100);
 }
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}

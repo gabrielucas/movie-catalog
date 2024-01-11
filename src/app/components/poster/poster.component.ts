@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
+import { MovieData } from '../../services/@types/MovieData'
 
 @Component({
   selector: 'app-poster',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core'
   templateUrl: './poster.component.html',
   styleUrl: './poster.component.scss',
 })
-export class PosterComponent {}
+export class PosterComponent {
+  @Input() movieData!: MovieData
+}

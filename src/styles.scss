@@ -1,5 +1,6 @@
 :root {
   --blue-100: #c0d2ff;
+  --blue-700: #273453;
   --blue-800: #1a2237;
   --blue-900: #181c27;
 
@@ -29,4 +30,9 @@ button {
 input {
   outline: 0;
   border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
 }
