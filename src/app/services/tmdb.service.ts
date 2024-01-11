@@ -12,4 +12,13 @@ export class TMDBService {
   getPopularMovies(page?: number): Observable<MovieDataResponse> {
     return this.http.get<MovieDataResponse>(`/movie/popular?page=${page}`)
   }
+
+  getMoviesByTitle(
+    title: string,
+    page?: number,
+  ): Observable<MovieDataResponse> {
+    return this.http.get<MovieDataResponse>(
+      `/search/movie?include_adult=false&query=${title}&page=${page}`,
+    )
+  }
 }
