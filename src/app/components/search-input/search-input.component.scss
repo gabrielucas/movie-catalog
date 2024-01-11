@@ -1,0 +1,19 @@
+.input-container {
+  max-width: 500px;
+  padding: 0.625rem;
+  border-radius: 0.9375rem;
+
+  display: flex;
+  background: var(--blue-800);
+
+  input {
+    width: 100%;
+    background: transparent;
+    margin-left: 0.75rem;
+
+    &,
+    &::placeholder {
+      color: var(--blue-100);
+    }
+  }
+}

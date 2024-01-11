@@ -1,6 +1,6 @@
 :root {
   --blue-100: #c0d2ff;
-  --blue-700: #222d4c;
+  --blue-800: #1a2237;
   --blue-900: #181c27;
 
   --white: #ffffff;
@@ -24,4 +24,9 @@ button {
   font-weight: 400;
   font-size: 1rem;
   color: var(--white);
+}
+
+input {
+  outline: 0;
+  border: 0;
 }
