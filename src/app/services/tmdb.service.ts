@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
+import { MovieDataResponse } from './@types/MovieDataResponse'
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs'
 export class TMDBService {
   constructor(private http: HttpClient) {}
 
-  async getPopularMovies(): Promise<Observable<Object>> {
-    return this.http.get(`/movie/popular`)
+  getPopularMovies(): Observable<MovieDataResponse> {
+    return this.http.get<MovieDataResponse>(`/movie/popular`)
   }
 }
