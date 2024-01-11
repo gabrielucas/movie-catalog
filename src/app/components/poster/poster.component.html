@@ -2,9 +2,14 @@
   <a href="/movie/{{ movieData.id }}">
     <div class="shadow"></div>
   </a>
-  <img
-    src="https://image.tmdb.org/t/p/w500{{ movieData.poster_path }}"
-    alt="{{ movieData.title }}"
-  />
+  @defer {
+    <img
+      alt="{{ movieData.title }}"
+      height="750"
+      ngSrc="https://image.tmdb.org/t/p/w500{{ movieData.poster_path }}"
+      priority
+      width="500"
+    />
+  }
   <h2>{{ movieData.title }}</h2>
 </li>
