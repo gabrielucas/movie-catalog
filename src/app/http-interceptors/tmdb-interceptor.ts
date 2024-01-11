@@ -22,6 +22,9 @@ export class TMDBInterceptor implements HttpInterceptor {
         accept: 'application/json',
         Authorization: `Bearer ${devEnvironment.apiKey}`,
       },
+      setParams: {
+        language: 'pt-BR',
+      },
       url: `${devEnvironment.baseUrl}${req.url}`,
     })
 
