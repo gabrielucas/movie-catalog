@@ -3,12 +3,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
-  selector: 'app-search-input',
+  selector: 'app-search',
   standalone: true,
   imports: [FontAwesomeModule],
-  templateUrl: `./search-input.component.html`,
-  styleUrl: './search-input.component.scss',
+  templateUrl: `./search.component.html`,
+  styleUrl: './search.component.scss',
 })
-export class SearchInputComponent {
+export class SearchComponent {
   searchIcon = faMagnifyingGlass
 }
