@@ -1,8 +1,12 @@
 :root {
-  --blue-100: #c0d2ff;
-  --blue-700: #273453;
-  --blue-800: #1a2237;
-  --blue-900: #181c27;
+  --blue-500: #1e3497;
+  --blue-600: #1e2e7f;
+
+  --light-blue: #c0d2ff;
+
+  --dark-blue-700: #273453;
+  --dark-blue-800: #1a2237;
+  --dark-blue-900: #181c27;
 
   --white: #ffffff;
 }
@@ -14,7 +18,7 @@
 }
 
 body {
-  background: var(--blue-900);
+  background: var(--dark-blue-900);
   -webkit-font-smothing: antialiased;
 }
 
@@ -27,7 +31,8 @@ button {
   color: var(--white);
 }
 
-input {
+input,
+button {
   outline: 0;
   border: 0;
 }

@@ -4,7 +4,7 @@
   border-radius: 0.9375rem;
 
   display: flex;
-  background: var(--blue-800);
+  background: var(--dark-blue-800);
 
   input {
     width: 100%;
@@ -13,7 +13,7 @@
 
     &,
     &::placeholder {
-      color: var(--blue-100);
+      color: var(--light-blue);
     }
   }
 }
