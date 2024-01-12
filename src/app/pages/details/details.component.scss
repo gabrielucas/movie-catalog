@@ -24,10 +24,12 @@
     }
   }
 
-  .details-box {
+  section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 1rem;
+    margin-top: 2rem;
     width: 100%;
 
     @media screen and (min-width: 768px) {
@@ -35,32 +37,23 @@
     }
   }
 
+  .details-image-container {
+    max-width: 360px;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+
   .details-content {
     h1 {
       font-size: 2rem;
       color: var(--light-blue);
+      margin-bottom: 0.5rem;
     }
 
     h4 {
       color: var(--light-blue);
       margin-bottom: 0.5rem;
     }
-  }
-
-  .data {
-    display: flex;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-
-    span {
-      font-size: 0.875rem;
-      font-style: italic;
-    }
-  }
-
-  .relevance {
-    font-weight: bold;
-    color: #f1c40f;
   }
 
   .synopsis {

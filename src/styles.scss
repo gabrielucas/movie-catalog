@@ -8,6 +8,9 @@
   --dark-blue-800: #1a2237;
   --dark-blue-900: #181c27;
 
+  --green: #2ecc71;
+  --red: #e74c3c;
+  --yellow: #f1c40f;
   --white: #ffffff;
 }
 
@@ -40,4 +43,22 @@ button {
 ul,
 ol {
   list-style: none;
+}
+
+.poster {
+  display: flex;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0px 0px 24px 0px var(--dark-blue-700);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

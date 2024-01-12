@@ -1,24 +1,46 @@
-import { Component, Input } from '@angular/core'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { ActivatedRoute } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
+import { NgOptimizedImage } from '@angular/common'
+
 import { PosterComponent } from '../../components/poster/poster.component'
-import { Router } from '@angular/router'
+
+import { TMDBService } from '../../services/tmdb.service'
+import { MovieDetails } from '../../services/@types/MovieDetails'
+import { GoBackButtonComponent } from '../../components/go-back-button/go-back-button.component'
+import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indicators-flags.component'
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [FontAwesomeModule, PosterComponent],
+  imports: [
+    PosterComponent,
+    NgOptimizedImage,
+    GoBackButtonComponent,
+    IndicatorsFlagsComponent,
+  ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
-export class DetailsComponent {
-  arrowLeftIcon = faArrowLeft
+export class DetailsComponent implements OnInit {
+  movieDetails!: MovieDetails
+  colorByRelevance!: string
 
-  @Input() colorByRelevance: string = '#2ecc71'
+  constructor(
+    private tmdbService: TMDBService,
+    private activateRoute: ActivatedRoute,
+  ) {}
 
-  constructor(private router: Router) {}
+  ngOnInit(): void {
+    const movieId = Number(this.activateRoute.snapshot.params['id'])
+    this.handleMovieDetails(movieId)
+  }
 
-  async goBackToHomePage() {
-    await this.router.navigate([''])
+  handleMovieDetails(movieId: number) {
+    return this.tmdbService.getMovieDetailsById(movieId).subscribe(response => {
+      this.movieDetails = {
+        ...response,
+        release_date: String(new Date(response.release_date).getFullYear()),
+      }
+    })
   }
 }
