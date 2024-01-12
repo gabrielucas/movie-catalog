@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 
 import { SearchComponent } from '../../components/search/search.component'
 import { PosterComponent } from '../../components/poster/poster.component'
@@ -14,12 +14,23 @@ import { MovieDataResponse } from '../../services/@types/MovieDataResponse'
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  moviesList: MovieData[] = []
-  currentPage = 1
+export class HomeComponent implements OnInit {
+  movies: MovieData[] = []
+  private pageNumber: number = 1
 
-  constructor(private tmdbService: TMDBService) {
+  constructor(private tmdbService: TMDBService) {}
+
+  ngOnInit(): void {
     this.handlePopularMovies()
+  }
+
+  handlePopularMovies() {
+    this.tmdbService
+      .getPopularMovies(this.pageNumber)
+      .subscribe((response: MovieDataResponse) => {
+        const { results: newMovies } = response
+        this.movies = [...this.movies, ...newMovies]
+      })
   }
 
   private isScrolledToBottom(): boolean {
@@ -29,17 +40,24 @@ export class HomeComponent {
   @HostListener('window:scroll', ['$event'])
   onScrollToPageBottom() {
     if (this.isScrolledToBottom()) {
-      this.currentPage++
+      this.pageNumber++
       this.handlePopularMovies()
     }
   }
 
-  handlePopularMovies() {
-    this.tmdbService
-      .getPopularMovies(this.currentPage)
-      .subscribe((response: MovieDataResponse) => {
-        const { results: newMovies } = response
-        this.moviesList = [...this.moviesList, ...newMovies]
-      })
+  onMovieSearchByTitle(title: string) {
+    this.pageNumber = 1
+
+    if (title) {
+      this.tmdbService
+        .getMoviesByTitle(title, this.pageNumber)
+        .subscribe(response => {
+          this.movies = response.results
+        })
+      return
+    }
+
+    this.movies = []
+    this.handlePopularMovies()
   }
 }

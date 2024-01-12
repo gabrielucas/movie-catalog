@@ -1,4 +1,9 @@
 <div class="search-container">
   <fa-icon [icon]="searchIcon"></fa-icon>
-  <input type="text" placeholder="Buscar filmes" />
+  <input
+    [(ngModel)]="searchText"
+    type="text"
+    placeholder="Buscar filmes"
+    (keyup.enter)="onEnter()"
+  />
 </div>

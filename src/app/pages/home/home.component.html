@@ -1,7 +1,7 @@
-<app-search></app-search>
+<app-search (searchEvent)="onMovieSearchByTitle($event)"></app-search>
 <h1>Filmes populares</h1>
 <ul>
-  @for (movie of moviesList; track $index) {
+  @for (movie of movies; track movie.id) {
     <app-poster [movieData]="movie"></app-poster>
   }
 </ul>
