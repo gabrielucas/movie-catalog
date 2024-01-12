@@ -1,21 +1,25 @@
-<div class="details-container">
-  <app-go-back-button></app-go-back-button>
-  <section>
-    <div class="poster details-image-container">
-      <app-poster [movieData]="movieDetails"></app-poster>
-    </div>
-    <div class="details-content">
-      <h1>{{ movieDetails.title }}</h1>
-      <app-indicators-flags [movieFlags]="movieDetails"></app-indicators-flags>
-      <div class="synopsis">
-        <h4>Sinopse</h4>
-        <p>
-          {{ movieDetails.overview }}
-        </p>
+@if (movieDetails) {
+  <div class="details-container">
+    <app-go-back-button></app-go-back-button>
+    <section>
+      <div class="poster details-image-container">
+        <app-poster [movieData]="movieDetails"></app-poster>
       </div>
-      <app-additional-information
-        [movieDetails]="movieDetails"
-      ></app-additional-information>
-    </div>
-  </section>
-</div>
+      <div class="details-content">
+        <h1>{{ movieDetails.title }}</h1>
+        <app-indicators-flags
+          [movieFlags]="movieDetails"
+        ></app-indicators-flags>
+        <div class="synopsis">
+          <h4>Sinopse</h4>
+          <p>
+            {{ movieDetails.overview }}
+          </p>
+        </div>
+        <app-additional-information
+          [movieDetails]="movieDetails"
+        ></app-additional-information>
+      </div>
+    </section>
+  </div>
+}
