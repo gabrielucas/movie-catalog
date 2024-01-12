@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
+
 import { MovieDataResponse } from './@types/MovieDataResponse'
+import { MovieDetails } from './@types/MovieDetails'
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +22,9 @@ export class TMDBService {
     return this.http.get<MovieDataResponse>(
       `/search/movie?include_adult=false&query=${title}&page=${page}`,
     )
+  }
+
+  getMovieDetailsById(id: number): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(`/movie/${id}`)
   }
 }
