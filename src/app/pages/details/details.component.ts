@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core'
 import { NgOptimizedImage } from '@angular/common'
 
 import { PosterComponent } from '../../components/poster/poster.component'
+import { GoBackButtonComponent } from '../../components/go-back-button/go-back-button.component'
+import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indicators-flags.component'
 
 import { TMDBService } from '../../services/tmdb.service'
 import { MovieDetails } from '../../services/@types/MovieDetails'
-import { GoBackButtonComponent } from '../../components/go-back-button/go-back-button.component'
-import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indicators-flags.component'
+import { AdditionalInformationComponent } from '../../components/additional-information/additional-information.component'
 
 @Component({
   selector: 'app-details',
@@ -17,13 +18,13 @@ import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indi
     NgOptimizedImage,
     GoBackButtonComponent,
     IndicatorsFlagsComponent,
+    AdditionalInformationComponent,
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent implements OnInit {
   movieDetails!: MovieDetails
-  colorByRelevance!: string
 
   constructor(
     private tmdbService: TMDBService,

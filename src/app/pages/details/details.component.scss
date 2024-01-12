@@ -64,20 +64,4 @@
       color: var(--white);
     }
   }
-
-  .additional-information {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-
-      li {
-        font-size: 0.875rem;
-      }
-    }
-  }
 }

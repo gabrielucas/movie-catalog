@@ -13,40 +13,9 @@
           {{ movieDetails.overview }}
         </p>
       </div>
-      <div class="additional-information">
-        <div>
-          <h4>Gêneros</h4>
-          <ul>
-            @for (genre of movieDetails.genres; track genre.id) {
-              <li>
-                {{ genre.name }}
-              </li>
-            }
-          </ul>
-        </div>
-        <div>
-          <h4>Produtoras</h4>
-          <ul>
-            @for (
-              company of movieDetails.production_companies;
-              track company.id
-            ) {
-              <li>{{ company.name }}</li>
-            }
-          </ul>
-        </div>
-        <div>
-          <h4>Países</h4>
-          <ul>
-            @for (
-              country of movieDetails.production_countries;
-              track country.iso_3166_1
-            ) {
-              <li>{{ country.name }}</li>
-            }
-          </ul>
-        </div>
-      </div>
+      <app-additional-information
+        [movieDetails]="movieDetails"
+      ></app-additional-information>
     </div>
   </section>
 </div>
