@@ -1,6 +1,8 @@
-<li>
+<li class="poster">
   <a [routerLink]="['/movie/', movieData.id]">
-    <div class="shadow"></div>
+    @if (hasShadowApplied) {
+      <div class="shadow"></div>
+    }
   </a>
   @defer {
     <img
@@ -11,5 +13,7 @@
       width="500"
     />
   }
-  <h2>{{ movieData.title }}</h2>
+  @if (isDisplayedTitle) {
+    <h2>{{ movieData.title }}</h2>
+  }
 </li>

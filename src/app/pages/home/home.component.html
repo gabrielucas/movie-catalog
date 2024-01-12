@@ -3,7 +3,11 @@
 @defer (on viewport) {
   <ul>
     @for (movie of movies; track movie.id) {
-      <app-poster [movieData]="movie"></app-poster>
+      <app-poster
+        [hasShadowApplied]="true"
+        [isDisplayedTitle]="true"
+        [movieData]="movie"
+      ></app-poster>
     }
   </ul>
 } @placeholder {

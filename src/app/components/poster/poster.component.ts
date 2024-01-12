@@ -12,5 +12,7 @@ import { RouterLink, RouterOutlet } from '@angular/router'
   styleUrl: './poster.component.scss',
 })
 export class PosterComponent {
-  @Input() movieData!: MovieData
+  @Input() movieData!: Pick<MovieData, 'id' | 'poster_path' | 'title'>
+  @Input() isDisplayedTitle?: boolean = false
+  @Input() hasShadowApplied?: boolean = false
 }
