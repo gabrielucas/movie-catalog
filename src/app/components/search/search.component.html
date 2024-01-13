@@ -1,9 +1,12 @@
 <div class="search-container">
-  <fa-icon [icon]="searchIcon"></fa-icon>
-  <input
-    [(ngModel)]="searchText"
-    type="text"
-    placeholder="Buscar filmes"
-    (keyup.enter)="onEnter()"
-  />
+  <div class="input">
+    <fa-icon [icon]="searchIcon"></fa-icon>
+    <input
+      [(ngModel)]="searchText"
+      type="text"
+      placeholder="Buscar filmes"
+      (keyup.enter)="onEnter()"
+    />
+  </div>
+  <button type="button" (click)="onEnter()">Buscar</button>
 </div>

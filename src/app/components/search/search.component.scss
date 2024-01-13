@@ -1,7 +1,31 @@
 .search-container {
-  max-width: 500px;
+  display: flex;
+
+  button {
+    display: flex;
+    justify-content: center;
+
+    background: var(--blue-500);
+    border-radius: 0 15px 15px 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    width: 90px;
+    padding: 0.625rem;
+    cursor: pointer;
+    transition: background 0.1s ease-in-out;
+
+    &:hover {
+      background: var(--blue-600);
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  max-width: 590px;
   padding: 0.625rem;
-  border-radius: 0.9375rem;
+  border-radius: 15px 0 0 15px;
 
   display: flex;
   background: var(--dark-blue-800);
@@ -10,10 +34,15 @@
     width: 100%;
     background: transparent;
     margin-left: 0.75rem;
+    font-size: 0.875rem;
 
     &,
     &::placeholder {
       color: var(--light-blue);
     }
+  }
+
+  & > .ng-fa-icon {
+    margin-left: 3px;
   }
 }
