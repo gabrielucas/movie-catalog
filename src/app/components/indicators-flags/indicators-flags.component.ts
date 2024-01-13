@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { MovieDetails } from '../../services/@types/MovieDetails'
+import { NgStyle } from '@angular/common'
 
 @Component({
   selector: 'app-indicators-flags',
   standalone: true,
-  imports: [],
+  imports: [NgStyle],
   templateUrl: './indicators-flags.component.html',
   styleUrl: './indicators-flags.component.scss',
 })

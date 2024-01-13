@@ -1,5 +1,5 @@
 <div>
-  <span [style.color]="colorByRelevance">{{
+  <span [ngStyle]="{ color: colorByRelevance }">{{
     movieFlags.vote_average.toFixed(2)
   }}</span>
   <span>{{ movieFlags.release_date }}</span>
