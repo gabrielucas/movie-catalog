@@ -1,0 +1,29 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-container {
+  width: fit-content;
+}
+
+.spinner-loader {
+  width: 70px;
+  height: 70px;
+  border: 0.5rem solid;
+  border-top: 0.5rem solid transparent !important;
+  border-radius: 50%;
+  animation: onRotate 1s linear infinite;
+
+  @keyframes onRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
