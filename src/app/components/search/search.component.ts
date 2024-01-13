@@ -15,7 +15,7 @@ export class SearchComponent {
   searchText!: string
   @Output() searchEvent = new EventEmitter<string>()
 
-  onEnter(): void {
+  onSearch(): void {
     this.searchEvent.emit(this.searchText)
   }
 }

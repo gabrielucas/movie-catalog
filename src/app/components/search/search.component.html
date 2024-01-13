@@ -5,8 +5,8 @@
       [(ngModel)]="searchText"
       type="text"
       placeholder="Buscar filmes"
-      (keyup.enter)="onEnter()"
+      (keyup.enter)="onSearch()"
     />
   </div>
-  <button type="button" (click)="onEnter()">Buscar</button>
+  <button type="button" (click)="onSearch()">Buscar</button>
 </div>
