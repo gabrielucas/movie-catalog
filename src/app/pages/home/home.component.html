@@ -1,6 +1,6 @@
 <app-search (searchEvent)="onMovieSearchByTitle($event)"></app-search>
 <h1>Filmes populares</h1>
-@defer (on viewport) {
+@defer {
   <ul>
     @for (movie of movies; track movie.id) {
       <app-poster
@@ -11,6 +11,6 @@
     }
   </ul>
 } @placeholder {
-  <div>Carregando filmes...</div>
+  <app-spinner></app-spinner>
 }
 <div class="bottom"></div>

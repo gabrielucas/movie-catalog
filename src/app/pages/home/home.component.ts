@@ -6,11 +6,12 @@ import { PosterComponent } from '../../components/poster/poster.component'
 import { TMDBService } from '../../services/tmdb.service'
 import { MovieData } from '../../services/@types/MovieData'
 import { MovieDataResponse } from '../../services/@types/MovieDataResponse'
+import { SpinnerComponent } from '../../components/spinner/spinner.component'
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [SearchComponent, PosterComponent],
+  imports: [SearchComponent, PosterComponent, SpinnerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

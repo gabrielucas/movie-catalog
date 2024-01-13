@@ -6,9 +6,11 @@ import { PosterComponent } from '../../components/poster/poster.component'
 import { GoBackButtonComponent } from '../../components/go-back-button/go-back-button.component'
 import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indicators-flags.component'
 
+import { SpinnerComponent } from '../../components/spinner/spinner.component'
+import { AdditionalInformationComponent } from '../../components/additional-information/additional-information.component'
+
 import { TMDBService } from '../../services/tmdb.service'
 import { MovieDetails } from '../../services/@types/MovieDetails'
-import { AdditionalInformationComponent } from '../../components/additional-information/additional-information.component'
 
 @Component({
   selector: 'app-details',
@@ -19,6 +21,7 @@ import { AdditionalInformationComponent } from '../../components/additional-info
     GoBackButtonComponent,
     IndicatorsFlagsComponent,
     AdditionalInformationComponent,
+    SpinnerComponent,
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
