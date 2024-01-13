@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onMovieSearchByTitle(title: string) {
+  onSearchMovieByTitle(title: string) {
     this.pageNumber = 1
 
     if (title) {
