@@ -20,7 +20,7 @@ describe('Given the <Spinner /> component', () => {
 
   describe('When to render the component', () => {
     it('Then it must validate if the component was rendered', () => {
-      expect(fixture.nativeElement).toBeTruthy()
+      expect(spinnerComponent).toBeTruthy()
     })
   })
 

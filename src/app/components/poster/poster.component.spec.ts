@@ -1,22 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 
 import { PosterComponent } from './poster.component'
 
-describe('PosterComponent', () => {
-  let component: PosterComponent
+describe('Given the <Poster /> component', () => {
+  let posterComponent: PosterComponent
   let fixture: ComponentFixture<PosterComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       imports: [PosterComponent],
     }).compileComponents()
+  }))
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(PosterComponent)
-    component = fixture.componentInstance
+    posterComponent = fixture.componentInstance
     fixture.detectChanges()
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
+  it('Then it must validate if the component was created', () => {
+    expect(posterComponent).toBeTruthy()
   })
 })
