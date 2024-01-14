@@ -2,11 +2,11 @@ import { Component, HostListener, OnInit } from '@angular/core'
 
 import { SearchComponent } from '../../components/search/search.component'
 import { PosterComponent } from '../../components/poster/poster.component'
+import { SpinnerComponent } from '../../components/spinner/spinner.component'
 
 import { TMDBService } from '../../services/tmdb.service'
 import { MovieData } from '../../services/@types/MovieData'
 import { MovieDataResponse } from '../../services/@types/MovieDataResponse'
-import { SpinnerComponent } from '../../components/spinner/spinner.component'
 
 @Component({
   selector: 'app-home',
