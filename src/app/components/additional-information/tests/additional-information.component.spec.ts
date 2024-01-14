@@ -26,12 +26,15 @@ describe('Given the <AdditionalInformation /> component', () => {
     it('Then must validate that the "movieDetails" property has, initially, an undefined value', () => {
       expect(additionalInfComponent.movieDetails).toBeUndefined()
     })
+
+    it('Then must validate that the "movieDetails" property has, initially, an undefined value', () => {
+      expect(additionalInfComponent.movieDetails).toBeUndefined()
+    })
   })
 
-  describe('When the "modeDetails" property is set', () => {
+  describe('When the "movieDetails" property is set', () => {
     beforeEach(() => {
       additionalInfComponent.movieDetails = additionalInformationForTesting
-
       fixture.detectChanges()
     })
 

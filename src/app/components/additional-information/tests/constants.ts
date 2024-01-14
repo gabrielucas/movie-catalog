@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker'
+
 import { MovieDetails } from '../../../services/@types/MovieDetails'
 
 const additionalInformationForTesting: Pick<
