@@ -1,13 +1,8 @@
 import { of } from 'rxjs'
 import { faker } from '@faker-js/faker'
 import { provideRouter } from '@angular/router'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
-import {
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
-} from '@angular/core/testing'
 
 import { HomeComponent } from './home.component'
 
@@ -76,19 +71,18 @@ describe('Given the <app-home /> component', () => {
       expect(homeComponent.movies).toEqual(mockMovieDataResponse.results)
     })
 
-    it('Then should display a list of movie posters', fakeAsync(() => {
+    it('Then should display a list of movie posters', async () => {
       mockTmdbService.getPopularMovies.and.returnValue(
         of(mockMovieDataResponse),
       )
 
       fixture.detectChanges()
 
-      tick()
+      await fixture.whenStable()
+      const posterList = await fixture.getDeferBlocks()
 
-      const postersList = fixture.nativeElement.querySelectorAll('li')
-
-      expect(postersList.length).toBe(mockMovieDataResponse.results.length)
-    }))
+      expect(posterList.length).toBe(mockMovieDataResponse.results.length)
+    })
   })
 
   describe('When #onSearchMovieByTitle() is executed', () => {
