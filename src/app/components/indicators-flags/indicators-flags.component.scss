@@ -3,12 +3,14 @@ div {
   margin-bottom: 1.5rem;
   gap: 1rem;
 
+  & > span:first-child {
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+  }
+
   span {
     font-size: 0.875rem;
     font-style: italic;
-  }
-
-  & > span:first-child {
-    font-weight: bold;
   }
 }

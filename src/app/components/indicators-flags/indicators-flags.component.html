@@ -1,7 +1,8 @@
 <div>
-  <span [ngStyle]="{ color: colorByRelevance }">{{
-    movieFlags.vote_average.toFixed(2)
-  }}</span>
+  <span [ngStyle]="{ color: colorByRelevance }">
+    <fa-icon [icon]="chartIcon"></fa-icon>
+    {{ movieFlags.vote_average.toFixed(2) }}</span
+  >
   <span>{{ movieFlags.release_date }}</span>
   <span>{{ movieFlags.runtime }} min</span>
 </div>
