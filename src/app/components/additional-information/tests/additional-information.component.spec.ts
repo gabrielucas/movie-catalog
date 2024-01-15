@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 import { AdditionalInformationComponent } from '../additional-information.component'
 import { additionalInformationForTesting } from './constants'
 
-describe('Given the <AdditionalInformation /> component', () => {
+describe('Given the <app-additional-information /> component', () => {
   let additionalInfComponent: AdditionalInformationComponent
   let fixture: ComponentFixture<AdditionalInformationComponent>
 

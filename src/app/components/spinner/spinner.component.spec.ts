@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 
 import { SpinnerComponent } from './spinner.component'
 
-describe('Given the <Spinner /> component', () => {
+describe('Given the <app-spinner /> component', () => {
   let spinnerComponent: SpinnerComponent
   let fixture: ComponentFixture<SpinnerComponent>
 

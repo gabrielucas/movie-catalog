@@ -6,7 +6,7 @@ import {
   voteAverageForExactTesting,
 } from './constants'
 
-describe('Given the <IndicatorsFlags /> component', () => {
+describe('Given the <app-indicators-flags /> component', () => {
   let indicatorsFlagComponent: IndicatorsFlagsComponent
   let fixture: ComponentFixture<IndicatorsFlagsComponent>
 

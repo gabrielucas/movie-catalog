@@ -5,7 +5,7 @@ import { Router } from '@angular/router'
 import { GoBackButtonComponent } from './go-back-button.component'
 import { By } from '@angular/platform-browser'
 
-describe('Given the <GoBackButton /> component', () => {
+describe('Given the <app-go-back-button /> component', () => {
   let goBackComponent: GoBackButtonComponent
   let fixture: ComponentFixture<GoBackButtonComponent>
   let router: Router
