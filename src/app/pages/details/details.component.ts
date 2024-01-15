@@ -9,8 +9,8 @@ import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indi
 import { SpinnerComponent } from '../../components/spinner/spinner.component'
 import { AdditionalInformationComponent } from '../../components/additional-information/additional-information.component'
 
-import { TMDBService } from '../../services/tmdb.service'
 import { MovieDetails } from '../../services/@types/MovieDetails'
+import { TMDBService } from '../../services/tmdb-service/tmdb.service'
 
 @Component({
   selector: 'app-details',

@@ -4,8 +4,8 @@ import { SearchComponent } from '../../components/search/search.component'
 import { PosterComponent } from '../../components/poster/poster.component'
 import { SpinnerComponent } from '../../components/spinner/spinner.component'
 
-import { TMDBService } from '../../services/tmdb.service'
 import { MovieData } from '../../services/@types/MovieData'
+import { TMDBService } from '../../services/tmdb-service/tmdb.service'
 import { MovieDataResponse } from '../../services/@types/MovieDataResponse'
 
 @Component({

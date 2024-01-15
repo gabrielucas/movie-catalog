@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 
-import { MovieDataResponse } from './@types/MovieDataResponse'
-import { MovieDetails } from './@types/MovieDetails'
+import { MovieDetails } from '../@types/MovieDetails'
+import { MovieDataResponse } from '../@types/MovieDataResponse'
 
 @Injectable({
   providedIn: 'root',
