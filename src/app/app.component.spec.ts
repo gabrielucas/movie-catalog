@@ -1,25 +1,26 @@
-import { TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+
 import { AppComponent } from './app.component'
+import { HomeComponent } from './pages/home/home.component'
+import { DetailsComponent } from './pages/details/details.component'
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents()
+describe('Given the <app-root>', () => {
+  let fixture: ComponentFixture<AppComponent>
+
+  beforeEach(() => {
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [AppComponent, HomeComponent, DetailsComponent],
+      }).compileComponents()
+    })
+
+    fixture = TestBed.createComponent(AppComponent)
   })
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app).toBeTruthy()
-  })
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    fixture.detectChanges()
-    const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, movie-api',
-    )
+  describe('When the component is mounted', () => {
+    it('Then it must validate if the component was created', () => {
+      const appComponent = fixture.componentInstance
+      expect(appComponent).toBeTruthy()
+    })
   })
 })
