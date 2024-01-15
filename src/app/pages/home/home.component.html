@@ -3,11 +3,13 @@
 @if (movies.length) {
   <ul>
     @for (movie of movies; track movie.id) {
-      <app-poster
-        [hasShadowEffectApplied]="true"
-        [isDisplayedTitle]="true"
-        [movieData]="movie"
-      ></app-poster>
+      @defer {
+        <app-poster
+          [hasShadowEffectApplied]="true"
+          [isDisplayedTitle]="true"
+          [movieData]="movie"
+        ></app-poster>
+      }
     }
   </ul>
 } @else {

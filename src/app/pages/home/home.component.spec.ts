@@ -1,4 +1,7 @@
 import { of } from 'rxjs'
+import { faker } from '@faker-js/faker'
+import { provideRouter } from '@angular/router'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import {
   ComponentFixture,
   TestBed,
@@ -7,14 +10,12 @@ import {
 } from '@angular/core/testing'
 
 import { HomeComponent } from './home.component'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
+
 import { TMDBService } from '../../services/tmdb-service/tmdb.service'
 import {
   mockMovieDataByTitleResponse,
   mockMovieDataResponse,
 } from '../../services/tmdb-service/tests/constants'
-import { faker } from '@faker-js/faker'
-import { provideRouter } from '@angular/router'
 
 describe('Given the <app-home /> component', () => {
   let homeComponent: HomeComponent
