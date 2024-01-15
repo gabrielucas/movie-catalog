@@ -1,27 +1,51 @@
-# MovieApi
+# Movie Catalog API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+This project is a Angular application, generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8. The objective of this technical case is to build a SPA capable of consuming an external movie API and displaying the data through a modern and usable interface.
 
-## Development server
+The service consumed was [The Movie Database](https://developer.themoviedb.org/docs/getting-started), a powerful API capable of providing data about series and films.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+These are some of the main Angular features used to build this application:
+- Components and your lifecycle;
+- Angular Routing;
+- Directives:
+  - ```ngStyle``` for inline dynamic styling;
+- **The new template syntaxes of Angular 17 for control flow:**
+  - ```@if () {} @else {}``` to work with conditional control in the component template;
+  - ```@for {}``` with the ```$index``` implicit variabel to iterate objects and arrays;
+  - ```@defer``` to defer loading of the ```<app-poster />``` component, which contains large images, until the user needs it.
+- Lazy loading router-based;
+- Unit tests with Jasmine and Karma.
+- CSS animations
 
-## Code scaffolding
+## Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To execute this project you need:
+- an LTS version of node installed on your local machine. If not, access [Node.js](https://nodejs.org/en/download/) for more information;
+- the latest version of Angular. To do this, run the line command:
+  ```npm install -g @angular/cli```;
+- [Git](https://www.git-scm.com/downloads) installed on your local machine.
 
-## Build
+## Let's start? :computer:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository on your local machine:
+```
+git clone https://github.com/gabrielucas/movie-catalog.git
+cd movie-catalog/ && code .
+```
 
-## Running unit tests
+2. Install all dependencies:
+```
+npm install
+```
+
+3. Run this command to build and serve the default app:
+```
+ng serve
+```
+
+4. In a web browser on your development computer, open ```http://localhost:4200/``` to view the application.
+
+## Running unit tests :test_tube:
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
