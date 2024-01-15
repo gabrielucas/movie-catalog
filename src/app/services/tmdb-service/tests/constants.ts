@@ -1,12 +1,34 @@
 import { faker } from '@faker-js/faker'
 
-import { MovieDetails, MovieDataResponse } from '../@types'
+import { MovieDetails, MovieDataResponse, MovieData } from '../@types'
+
+const mockMovieData: MovieData = {
+  adult: faker.datatype.boolean(),
+  backdrop_path: faker.image.url(),
+  genre_ids: [faker.number.int(), faker.number.int(), faker.number.int()],
+  id: faker.number.int(),
+  original_language: faker.word.sample(),
+  original_title: faker.music.songName(),
+  overview: faker.word.words(),
+  popularity: faker.number.int(),
+  poster_path: faker.image.url(),
+  release_date: String(faker.date.recent().getFullYear()),
+  title: faker.music.songName(),
+  video: faker.datatype.boolean(),
+  vote_average: faker.number.int(),
+  vote_count: faker.number.int(),
+}
 
 const mockMovieDataResponse: MovieDataResponse = {
   page: faker.number.int(),
-  results: [],
+  results: [mockMovieData, mockMovieData, mockMovieData],
   total_pages: faker.number.int(),
   total_results: faker.number.int(),
+}
+
+const mockMovieDataByTitleResponse: MovieDataResponse = {
+  ...mockMovieDataResponse,
+  results: [mockMovieData, mockMovieData],
 }
 
 const mockMovieDetailsResponse: MovieDetails = {
@@ -57,4 +79,8 @@ const mockMovieDetailsResponse: MovieDetails = {
   vote_count: faker.number.int(),
 }
 
-export { mockMovieDataResponse, mockMovieDetailsResponse }
+export {
+  mockMovieDataResponse,
+  mockMovieDetailsResponse,
+  mockMovieDataByTitleResponse,
+}

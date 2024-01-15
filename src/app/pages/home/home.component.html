@@ -1,6 +1,6 @@
 <app-search (searchEvent)="onSearchMovieByTitle($event)"></app-search>
 <h1>Filmes populares</h1>
-@defer {
+@if (movies.length) {
   <ul>
     @for (movie of movies; track movie.id) {
       <app-poster
@@ -10,7 +10,7 @@
       ></app-poster>
     }
   </ul>
-} @placeholder {
+} @else {
   <app-spinner></app-spinner>
 }
 <div class="bottom"></div>
