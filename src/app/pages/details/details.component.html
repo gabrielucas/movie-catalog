@@ -3,7 +3,9 @@
   @if (movieDetails) {
     <section>
       <div class="poster details-image-container">
-        <app-poster [movieData]="movieDetails"></app-poster>
+        @defer {
+          <app-poster [movieData]="movieDetails"></app-poster>
+        }
       </div>
       <div class="details-content">
         <h1>{{ movieDetails.title }}</h1>
@@ -20,6 +22,16 @@
           [movieDetails]="movieDetails"
         ></app-additional-information>
       </div>
+
+      @defer {
+        <img
+          alt="{{ movieDetails.title }}"
+          height="750"
+          ngSrc="https://image.tmdb.org/t/p/w500{{ movieDetails.poster_path }}"
+          priority
+          width="500"
+        />
+      }
     </section>
   } @else {
     <app-spinner></app-spinner>
