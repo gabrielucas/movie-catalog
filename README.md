@@ -14,8 +14,10 @@ These are some of the main Angular features used to build this application:
   - ```@for {}``` with the ```$index``` implicit variabel to iterate objects and arrays;
   - ```@defer``` to defer loading of the ```<app-poster />``` component, which contains large images, until the user needs it.
 - Lazy loading router-based;
-- Unit tests with Jasmine and Karma.
-- CSS animations
+- Unit tests with Jasmine and Karma;
+- CSS animations.
+
+This application was hosted on Vercel and can be accessed at [Movie Catalog API](https://movie-catalog-by-lucas-viana.vercel.app/)
 
 ## Requirements
 
