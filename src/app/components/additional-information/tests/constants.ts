@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-import { MovieDetails } from '../../../services/@types/MovieDetails'
+import { MovieDetails } from '../../../services/tmdb-service/@types'
 
 const additionalInformationForTesting: Pick<
   MovieDetails,

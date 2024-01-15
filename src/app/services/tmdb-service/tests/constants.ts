@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-import { MovieDetails } from '../../@types/MovieDetails'
-import { MovieDataResponse } from '../../@types/MovieDataResponse'
+import { MovieDetails, MovieDataResponse } from '../@types'
 
 const mockMovieDataResponse: MovieDataResponse = {
   page: faker.number.int(),

@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core'
 import { NgOptimizedImage } from '@angular/common'
 
 import { PosterComponent } from '../../components/poster/poster.component'
+import { SpinnerComponent } from '../../components/spinner/spinner.component'
 import { GoBackButtonComponent } from '../../components/go-back-button/go-back-button.component'
 import { IndicatorsFlagsComponent } from '../../components/indicators-flags/indicators-flags.component'
-
-import { SpinnerComponent } from '../../components/spinner/spinner.component'
 import { AdditionalInformationComponent } from '../../components/additional-information/additional-information.component'
 
-import { MovieDetails } from '../../services/@types/MovieDetails'
+import { MovieDetails } from '../../services/tmdb-service/@types'
 import { TMDBService } from '../../services/tmdb-service/tmdb.service'
 
 @Component({

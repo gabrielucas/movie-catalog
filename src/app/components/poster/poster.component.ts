@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core'
 import { NgOptimizedImage } from '@angular/common'
 import { RouterLink } from '@angular/router'
 
-import { MovieData } from '../../services/@types/MovieData'
+import { MovieData } from '../../services/tmdb-service/@types'
 
 @Component({
   selector: 'app-poster',

@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { MovieDetails } from '../../services/@types/MovieDetails'
 import { NgStyle } from '@angular/common'
+import { Component, Input, OnInit } from '@angular/core'
+
+import { MovieDetails } from '../../services/tmdb-service/@types'
 
 @Component({
   selector: 'app-indicators-flags',

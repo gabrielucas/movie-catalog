@@ -4,9 +4,9 @@ import { SearchComponent } from '../../components/search/search.component'
 import { PosterComponent } from '../../components/poster/poster.component'
 import { SpinnerComponent } from '../../components/spinner/spinner.component'
 
-import { MovieData } from '../../services/@types/MovieData'
+import { MovieData } from '../../services/tmdb-service/@types'
 import { TMDBService } from '../../services/tmdb-service/tmdb.service'
-import { MovieDataResponse } from '../../services/@types/MovieDataResponse'
+import { MovieDataResponse } from '../../services/tmdb-service/@types/MovieDataResponse'
 
 @Component({
   selector: 'app-home',

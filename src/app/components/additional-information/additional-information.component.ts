@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 
-import { MovieDetails } from '../../services/@types/MovieDetails'
+import { MovieDetails } from '../../services/tmdb-service/@types'
 
 @Component({
   selector: 'app-additional-information',
