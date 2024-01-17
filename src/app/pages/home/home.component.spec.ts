@@ -99,4 +99,30 @@ describe('Given the <app-home /> component', () => {
       expect(homeComponent.movies).toEqual(mockMovieDataByTitleResponse.results)
     })
   })
+
+  describe('When the user scrolls the page to the end', () => {
+    beforeEach(() => {
+      spyOnProperty(window, 'innerHeight', 'get').and.returnValue(1000)
+      spyOnProperty(window, 'scrollY', 'get').and.returnValue(500)
+      spyOnProperty(document.body, 'offsetHeight', 'get').and.returnValue(1500)
+    })
+
+    it('Then should call #onScrollToPageBottom() function', () => {
+      spyOn(homeComponent, 'onScrollToPageBottom').and.callThrough()
+
+      const scrollEvent = document.createEvent('Event')
+      scrollEvent.initEvent('scroll', true, true)
+      window.dispatchEvent(scrollEvent)
+
+      expect(homeComponent.onScrollToPageBottom).toHaveBeenCalled()
+    })
+
+    it('Then should increment "pageNumber" and call #handlePopularMovies() function', () => {
+      spyOn(homeComponent, 'handlePopularMovies')
+
+      homeComponent.onScrollToPageBottom()
+
+      expect(homeComponent.handlePopularMovies).toHaveBeenCalled()
+    })
+  })
 })
