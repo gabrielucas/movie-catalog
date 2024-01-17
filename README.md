@@ -9,10 +9,12 @@ These are some of the main Angular features used to build this application:
 - Angular Routing;
 - Directives:
   - ```ngStyle``` for inline dynamic styling;
+  - ```ngModel```directive for [two-way binding](https://angular.io/guide/two-way-binding) between child and parents components;
 - **The new template syntaxes of Angular 17 for control flow:**
   - ```@if () {} @else {}``` to work with conditional control in the component template;
   - ```@for {}``` with the ```$index``` implicit variabel to iterate objects and arrays;
   - ```@defer``` to defer loading of the ```<app-poster />``` component, which contains large images, until the user needs it.
+- [NgOptimizedImage](https://angular.io/guide/image-directive) directive to adopt performance best practices for loading images;
 - Lazy loading router-based;
 - Unit tests with Jasmine and Karma;
 - CSS animations.
