@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router'
-import { Component, OnInit } from '@angular/core'
 import { NgOptimizedImage } from '@angular/common'
+import { Component, OnInit, inject } from '@angular/core'
 
 import { PosterComponent } from '../../components/poster/poster.component'
 import { SpinnerComponent } from '../../components/spinner/spinner.component'
@@ -26,12 +26,10 @@ import { TMDBService } from '../../services/tmdb-service/tmdb.service'
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent implements OnInit {
-  movieDetails!: MovieDetails
+  public movieDetails!: MovieDetails
 
-  constructor(
-    private tmdbService: TMDBService,
-    private activateRoute: ActivatedRoute,
-  ) {}
+  private tmdbService: TMDBService = inject(TMDBService)
+  private activateRoute: ActivatedRoute = inject(ActivatedRoute)
 
   ngOnInit(): void {
     const movieId = Number(this.activateRoute.snapshot.params['id'])

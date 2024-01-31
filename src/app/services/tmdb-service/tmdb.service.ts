@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { Observable } from 'rxjs'
 
 import { MovieDetails, MovieDataResponse } from './@types'
@@ -8,7 +8,7 @@ import { MovieDetails, MovieDataResponse } from './@types'
   providedIn: 'root',
 })
 export class TMDBService {
-  constructor(private http: HttpClient) {}
+  private http: HttpClient = inject(HttpClient)
 
   getPopularMovies(page?: number): Observable<MovieDataResponse> {
     return this.http.get<MovieDataResponse>(`/movie/popular?page=${page}`)

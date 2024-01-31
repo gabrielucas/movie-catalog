@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core'
+import { Component, HostListener, OnInit, inject } from '@angular/core'
 
 import { SearchComponent } from '../../components/search/search.component'
 import { PosterComponent } from '../../components/poster/poster.component'
@@ -16,10 +16,10 @@ import { MovieDataResponse } from '../../services/tmdb-service/@types/MovieDataR
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  movies: MovieData[] = []
-  private pageNumber: number = 1
+  public movies: MovieData[] = []
 
-  constructor(private tmdbService: TMDBService) {}
+  private pageNumber: number = 1
+  private tmdbService: TMDBService = inject(TMDBService)
 
   ngOnInit(): void {
     this.handlePopularMovies()
