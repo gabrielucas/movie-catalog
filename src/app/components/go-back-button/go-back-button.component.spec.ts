@@ -1,45 +1,40 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-import { RouterTestingModule } from '@angular/router/testing'
-import { Router } from '@angular/router'
-
-import { GoBackButtonComponent } from './go-back-button.component'
+import { Spectator, SpyObject, createComponentFactory } from '@ngneat/spectator'
 import { By } from '@angular/platform-browser'
 
+import { GoBackButtonComponent } from './go-back-button.component'
+import { Router } from '@angular/router'
+
 describe('Given the <app-go-back-button /> component', () => {
-  let goBackComponent: GoBackButtonComponent
-  let fixture: ComponentFixture<GoBackButtonComponent>
-  let router: Router
+  let spectator: Spectator<GoBackButtonComponent>
+  let serviceRouter: SpyObject<Router>
+
+  const createComponent = createComponentFactory({
+    component: GoBackButtonComponent,
+    imports: [],
+    detectChanges: true,
+  })
 
   beforeEach(() => {
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        imports: [GoBackButtonComponent, RouterTestingModule],
-      }).compileComponents()
-    })
-
-    fixture = TestBed.createComponent(GoBackButtonComponent)
-    goBackComponent = fixture.componentInstance
-    router = TestBed.inject(Router)
-    fixture.detectChanges()
+    spectator = createComponent()
+    serviceRouter = spectator.inject(Router)
   })
 
   describe('When to render the component', () => {
     it('Then it must validate if the component was rendered', () => {
-      expect(goBackComponent).toBeTruthy()
+      expect(spectator.component).toBeTruthy()
     })
 
     it('Then validate that the button was created', () => {
-      const button = fixture.debugElement.query(By.css('button'))
-
+      const button = spectator.debugElement.query(By.css('button'))
       expect(button).toBeDefined()
     })
   })
 
   describe('When to execute the goBackToHomePage() function', () => {
     it('Then check if the navigate method was called', () => {
-      const navigateSpy = spyOn(router, 'navigate')
+      const navigateSpy = spyOn(serviceRouter, 'navigate')
 
-      goBackComponent.goBackToHomePage()
+      spectator.component.goBackToHomePage()
 
       expect(navigateSpy).toHaveBeenCalledTimes(1)
       expect(navigateSpy).toHaveBeenCalledWith([''])
